@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PECO LINE OS</title>
+<meta name="robots" content="noindex">
+<style>
+/* デザイントークン（モック v4.2 と同じ。[確定]＝採用画像由来、それ以外は暫定） */
+:root{--navy:#1e3a8a;--navy-b:#2a4bb3;--ver:#e8542a;--ver-l:#fdebe4;--blue:#1f6fd1;--yel:#f7d44a;--yel-l:#fff4bf;--ink:#1c1c1a;--mut:#6b6b66;--line:#e3e6ea;--bg:#f5f7fb;--card:#fff;--r:16px;--shadow:0 2px 8px rgba(30,58,138,.08);--font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.6;-webkit-text-size-adjust:100%}
+button{font-family:inherit;cursor:pointer}
+.app{min-height:100vh;display:flex;flex-direction:column}
+.hd{display:flex;align-items:center;padding:10px 44px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;min-height:48px}
+.hd .x{position:absolute;left:6px;top:50%;transform:translateY(-50%);font-size:26px;line-height:1;color:var(--navy);background:none;border:none;padding:4px 10px;font-weight:700}
+.hd b{flex:1;text-align:center;font-size:15px;color:var(--navy)}
+.hd small{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--mut)}
+.body{flex:1;padding:12px;display:flex;flex-direction:column;gap:10px;padding-bottom:84px}
+.ptabs{display:flex;gap:6px;overflow-x:auto;padding:0 0 2px}
+.ptabs button{flex:0 0 auto;padding:6px 16px;border-radius:999px;border:1.5px solid var(--navy);background:#fff;font-size:13px;font-weight:700;color:var(--navy);line-height:1.2}
+.ptabs button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.ptabs button small{display:block;font-size:9.5px;font-weight:400;opacity:.8}
+.ptabs .bd{display:inline-block;min-width:16px;height:16px;line-height:16px;border-radius:8px;background:var(--ver);color:#fff;font-size:10px;text-align:center;margin-left:4px;padding:0 4px}
+.ptabs button[aria-pressed="true"] .bd{background:#fff;color:var(--ver)}
+.card{background:var(--card);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:8px;font-size:13px;box-shadow:var(--shadow)}
+.card.flush{padding:0;overflow:hidden}
+.card .head{padding:12px 14px;background:var(--navy);color:#fff;display:flex;flex-direction:column;gap:2px}
+.card .head.due{background:var(--ver)}.card .head.hold{background:#6b7280}
+.card .head small{font-size:11px;opacity:.9}.card .head b{font-size:17px}.card .head span{font-size:12px;opacity:.92}
+.card .pad{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.pbtn{display:block;width:100%;text-align:center;padding:13px;border-radius:999px;border:none;background:var(--navy);color:#fff;font-weight:700;font-size:15px}
+.sbtn{display:block;width:100%;text-align:center;padding:11px;border-radius:999px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-size:13px;font-weight:700}
+.ok{background:#e9eefb;color:var(--navy);font-weight:700;border-radius:10px;padding:10px 12px;font-size:13px}
+.ok.warn{background:var(--yel-l);color:#8a5a00}.ok.bad{background:var(--ver-l);color:#b8431c}
+.row{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid #eef1f4}
+.row.dim{opacity:.55}
+.date{display:flex;flex-direction:column;align-items:center;min-width:48px;padding:4px 0;border-radius:8px}
+.date small{font-size:11px}.date b{font-size:17px;line-height:1.1}
+.row .n{font-size:11px;color:var(--mut)}
+.pill{font-size:11px;padding:3px 8px;border-radius:10px;white-space:nowrap;font-weight:700}
+.inp{padding:12px;font-size:16px;border:1px solid #c9ced3;border-radius:10px;background:#fff;width:100%}
+.fine{font-size:11px;color:var(--mut)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13px}.kv span:nth-child(odd){color:var(--mut);white-space:nowrap}
+.pcard{display:flex;align-items:center;gap:10px}.pcard .av{font-size:28px;line-height:1}.pcard .tx{flex:1;min-width:0}.pcard .tx b{display:block;font-size:14px}.pcard .tx span{display:block;font-size:12.5px;font-weight:700}.pcard .tx small{color:var(--mut);font-size:11px;font-weight:400}
+.sk{background:linear-gradient(90deg,#eef1f6 25%,#f7f9fc 50%,#eef1f6 75%);background-size:200% 100%;animation:sk 1.2s infinite;border-radius:8px;height:14px}
+@keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.dev{position:fixed;left:0;right:0;bottom:0;background:#1c1c1a;color:#fff;font-size:11px;padding:6px 10px;display:flex;gap:6px;align-items:center;overflow-x:auto;z-index:9}
+.dev button{flex:0 0 auto;border:1px solid #666;background:#333;color:#fff;border-radius:999px;padding:3px 9px;font-size:11px}
+.dev button[aria-pressed="true"]{background:#fff;color:#111;border-color:#fff}
+.dev .lb{flex:0 0 auto;opacity:.7}
+</style>
+</head>
+<body>
+<div class="app" id="app"><div class="hd"><b>PECO LINE OS</b></div><div class="body"><div class="card"><div class="sk" style="width:50%"></div><div class="sk"></div><div class="sk" style="width:70%"></div></div><span class="fine" style="text-align:center">読み込み中…</span></div></div>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

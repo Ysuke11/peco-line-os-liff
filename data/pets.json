@@ -1,0 +1,415 @@
+{
+ "_note": "架空のテストデータ（tag_engine test_pets.json と同じ）。LIFF 検証用。実データは段階 4 で API に置き換える",
+ "as_of": "2026-10-19",
+ "pets": [
+  {
+   "id": "T1",
+   "owner_id": "O-1",
+   "pet_id": "P-1",
+   "name": "モモ",
+   "species": "cat",
+   "pet_life_stage": "young_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "due",
+     "prev": "2025-11-05",
+     "due": "2026-11-05"
+    },
+    "flea": {
+     "status": "pre",
+     "next": "2026-10-25"
+    },
+    "checkup": {
+     "status": "pre",
+     "prev": "2026-08-20"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "4歳"
+  },
+  {
+   "id": "T2",
+   "owner_id": "O-2",
+   "pet_id": "P-2",
+   "name": "ココ",
+   "species": "dog",
+   "pet_life_stage": "puppy",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "soon",
+     "prev": "2026-09-20",
+     "next": "2026-11-20"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "5か月"
+  },
+  {
+   "id": "T3",
+   "owner_id": "O-3",
+   "pet_id": "P-3",
+   "name": "レオ",
+   "species": "dog",
+   "pet_life_stage": "young_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "pre",
+     "prev": "2026-07-12",
+     "next": "2027-07-12"
+    },
+    "filaria": {
+     "status": "on",
+     "until": "2026-11-30"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "3歳"
+  },
+  {
+   "id": "T4",
+   "owner_id": "O-4",
+   "pet_id": "P-4",
+   "name": "ハナ",
+   "species": "dog",
+   "pet_life_stage": "senior",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "checkup": {
+     "status": "due",
+     "prev": "2025-10-14",
+     "due": "2026-11-30"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "11歳"
+  },
+  {
+   "id": "T5",
+   "owner_id": "O-5",
+   "pet_id": "P-5",
+   "name": "ルナ",
+   "species": "cat",
+   "pet_life_stage": "mature_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "due",
+     "prev": "2025-10-18",
+     "due": "2026-10-31"
+    }
+   },
+   "flags": {},
+   "booking": {
+    "item": "vaccine",
+    "at": "2026-10-20T10:30",
+    "clinic_id": "harajuku"
+   },
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "8歳"
+  },
+  {
+   "id": "T6",
+   "owner_id": "O-6",
+   "pet_id": "P-6",
+   "name": "ソラ",
+   "species": "cat",
+   "pet_life_stage": "senior",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "done",
+     "prev": "2026-10-10",
+     "next": "2027-10-10"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "12歳"
+  },
+  {
+   "id": "T7",
+   "owner_id": "O-7",
+   "pet_id": "P-7",
+   "name": "マロン",
+   "species": "dog",
+   "pet_life_stage": "mature_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "due",
+     "prev": "2025-10-01",
+     "due": "2026-10-31"
+    }
+   },
+   "flags": {
+    "hold": true
+   },
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "6歳"
+  },
+  {
+   "id": "T8",
+   "owner_id": "O-8",
+   "pet_id": "P-8",
+   "name": "ミミ",
+   "species": "cat",
+   "pet_life_stage": "puppy",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "due",
+     "prev": "2026-09-01",
+     "due": "2026-10-31"
+    }
+   },
+   "flags": {
+    "treatment": true
+   },
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "4か月"
+  },
+  {
+   "id": "T9",
+   "owner_id": "O-9",
+   "pet_id": "P-9",
+   "name": "リン",
+   "species": "cat",
+   "pet_life_stage": "young_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "pre",
+     "prev": "2026-05-10",
+     "next": "2027-05-10"
+    },
+    "flea": {
+     "status": "due",
+     "next": "2026-10-16"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "2歳"
+  },
+  {
+   "id": "T10",
+   "owner_id": "O-10",
+   "pet_id": "P-10",
+   "name": "ムギ",
+   "species": "dog",
+   "pet_life_stage": "mature_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "due",
+     "prev": "2025-10-05",
+     "due": "2026-10-31"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": false
+   },
+   "postponed_until": null,
+   "age": "5歳"
+  },
+  {
+   "id": "T11",
+   "owner_id": "O-11",
+   "pet_id": "P-11",
+   "name": "チョコ",
+   "species": "dog",
+   "pet_life_stage": null,
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {},
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "生年月日なし"
+  },
+  {
+   "id": "T12",
+   "owner_id": null,
+   "pet_id": null,
+   "name": null,
+   "species": null,
+   "pet_life_stage": null,
+   "birthday": null,
+   "clinic_id": null,
+   "linked": false,
+   "registered": null,
+   "prevention": {},
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": ""
+  },
+  {
+   "id": "T13",
+   "owner_id": "O-1",
+   "pet_id": "P-13",
+   "name": "ポチ",
+   "species": "dog",
+   "pet_life_stage": "young_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": "2024-03-01",
+   "prevention": {
+    "vaccine": {
+     "status": "pre",
+     "prev": "2026-06-10",
+     "next": "2027-06-10"
+    },
+    "filaria": {
+     "status": "on",
+     "until": "2026-12-01"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "3歳"
+  },
+  {
+   "id": "T14",
+   "owner_id": "O-14",
+   "pet_id": "P-14",
+   "name": "クロ",
+   "species": "cat",
+   "pet_life_stage": null,
+   "birthday": "2021-05-01",
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "prev": "2025-08-01",
+     "next": "2026-08-01"
+    },
+    "checkup": {
+     "prev": "2026-02-10"
+    }
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "5歳"
+  },
+  {
+   "id": "T15",
+   "owner_id": "O-15",
+   "pet_id": "P-15",
+   "name": "ベル",
+   "species": "dog",
+   "pet_life_stage": "young_adult",
+   "birthday": null,
+   "clinic_id": "harajuku",
+   "linked": true,
+   "registered": null,
+   "prevention": {
+    "vaccine": {
+     "status": "pre",
+     "prev": "2026-05-15",
+     "next": "2027-05-15"
+    },
+    "flea": {}
+   },
+   "flags": {},
+   "booking": null,
+   "consent": {
+    "prevention_notice": true
+   },
+   "postponed_until": null,
+   "age": "2歳"
+  }
+ ]
+}
